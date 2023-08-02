@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import DrumPad from "./DrumPad";
 import tom from "../assets/audio/Small-Tom-Drum-Hit-Level-4A.mp3";
 import kick from "../assets/audio/Kick-Drum.mp3";
 import cymbalCrash from "../assets/audio/China-Cymbal-Crash-Level-6A.mp3";
@@ -17,28 +16,24 @@ import mediumTom from "../assets/audio/Medium-Tom-Drum-Hit-Level-7A.mp3";
 import smallTom from "../assets/audio/Small-Tom-Drum-Hit-Level-4A.mp3";
 import snareDrum from "../assets/audio/Snare-Drum-Hit-Level-6a.mp3";
 import SplashCymbal from "../assets/audio/Splash-Cymbal-Hit-C.mp3";
-
 import { Howl } from "howler";
 import { Button } from "@mui/material";
+import "../assets/css/drum.css";
 function Drum() {
   const drumPads = [
-    { name: "cymbalCrash", key: "Q", soundSrc: cymbalCrash },
-    { name: "cymbalSideB", key: "W", soundSrc: cymbalSideB },
-    { name: "cymbalSideC", key: "E", soundSrc: cymbalSideC },
-    { name: "cymbalSideD", key: "R", soundSrc: cymbalSideD },
-    { name: "cymbalHitA", key: "T", soundSrc: cymbalHitA },
-    { name: "cymbalHitC", key: "Y", soundSrc: cymbalHitC },
-    { name: "SplashCymbal", key: "U", soundSrc: SplashCymbal },
-    { name: "hiHatA2", key: "K", soundSrc: hiHatA2 },
-    { name: "hiHatE1", key: "L", soundSrc: hiHatE1 },
-    { name: "hiHatFoot", key: "J", soundSrc: hiHatFoot },
-    { name: "highTom", key: "G", soundSrc: highTom },
-    { name: "mediumTom", key: "H", soundSrc: mediumTom },
-    { name: "smallTom", key: "D", soundSrc: smallTom },
-    { name: "Tom", key: "A", soundSrc: tom },
-    { name: "floorTom", key: "F", soundSrc: floorTom },
-    { name: "snareDrum", key: "S", soundSrc: snareDrum },
-    { name: "Kick", key: "B", soundSrc: kick },
+    { id: 1, name: "close", key: "W", soundSrc: hiHatA2 },
+    { id: 2, name: "crashL", key: "Q", soundSrc: cymbalCrash },
+    { id: 3, name: "splash", key: "E", soundSrc: SplashCymbal },
+    { id: 4, name: "crashR", key: "R", soundSrc: cymbalCrash },
+    { id: 5, name: "ride", key: "T", soundSrc: cymbalHitA },
+    { id: 6, name: "open", key: "Y", soundSrc: hiHatE1 },
+    { id: 7, name: "tomR", key: "D", soundSrc: smallTom },
+    { id: 8, name: "tomL", key: "G", soundSrc: highTom },
+    { id: 9, name: "tomM", key: "H", soundSrc: mediumTom },
+    { id: 10, name: "snare", key: "S", soundSrc: snareDrum },
+    { id: 11, name: "kickL", key: "B", soundSrc: kick },
+    { id: 12, name: "kickR", key: "B", soundSrc: kick },
+    { id: 13, name: "floor", key: "F", soundSrc: floorTom },
   ];
 
   const playSound = (soundSrc) => {
@@ -73,21 +68,22 @@ function Drum() {
   }, []);
 
   return (
-    <div className="drum-kit">
-      <div className=""></div>
-      {drumPads.map((drumPad, index) => {
-        const { key, soundSrc, name } = drumPad;
-        return (
-          <Button
-            key={index}
-            className="drum-pad"
-            onClick={() => playSound(soundSrc)}
-            // onKeyPress={(e) => onKeyPlaySound(e)}
-          >
-            {name} {key}
-          </Button>
-        );
-      })}
+    <div className="drumKit">
+      <div className="drumSet">
+        {drumPads.map((drumPad, index) => {
+          const { key, soundSrc, name } = drumPad;
+          return (
+            <div
+              key={index}
+              id={name}
+              className="element"
+              onClick={() => playSound(soundSrc)}
+            >
+              <div></div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
