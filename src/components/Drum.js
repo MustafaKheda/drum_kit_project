@@ -1,27 +1,4 @@
-<<<<<<< HEAD
-import React from "react";
-import DrumPad from "./DrumPad";
-
-function Drum() {
-  const drumPads = [
-    { key: "Q", soundSrc: "path/to/sound1.mp3" },
-    { key: "W", soundSrc: "path/to/sound2.mp3" },
-    // Add more drum pads as needed
-  ];
-  return (
-    <div className="drum-kit">
-      {drumPads.map((drumPad) => {
-        console.log(drumPad);
-        return (
-          <DrumPad
-            key={drumPad.key}
-            keyTrigger={drumPad.key}
-            soundSrc={drumPad.soundSrc}
-          />
-        );
-      })}
-=======
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import kick from "../assets/audio/Kick-Drum.mp3";
 import cymbalCrash from "../assets/audio/China-Cymbal-Crash-Level-6A.mp3";
 import cymbalHitA from "../assets/audio/Crash-Cymbal-Hit-A.mp3";
@@ -52,6 +29,7 @@ const drumPads = [
   { id: 13, name: "floor", key: "M", soundSrc: floorTom },
 ];
 function Drum() {
+  const [isShow, setIsShow] = useState(true);
   const playSound = (name, soundSrc) => {
     const element = document.getElementById(name).classList;
     console.log(element);
@@ -87,7 +65,14 @@ function Drum() {
       <Typography className="heading" fontFamily={"fantasy"} variant="h5">
         Virtual Drum set
       </Typography>
-
+      <Typography
+        className="toggle"
+        fontFamily={"fantasy"}
+        variant="h5"
+        onClick={() => setIsShow(!isShow)}
+      >
+        {isShow ? "Hide Drum Key" : "Show Drum Key"}
+      </Typography>
       <div className="drumSet">
         {drumPads.map((drumPad, index) => {
           const { key, soundSrc, name } = drumPad;
@@ -99,23 +84,20 @@ function Drum() {
                 className="element"
                 onClick={(e) => playSound(name, soundSrc)}
               >
-                <div>{key}</div>
+                <div></div>
               </div>
+              {isShow ? (
+                <Typography
+                  onClick={(e) => playSound(name, soundSrc)}
+                  className={`${name}-letter font`}
+                >
+                  {key}
+                </Typography>
+              ) : null}
             </>
           );
         })}
-        <Typography className="kickL-letter font">V</Typography>
-        <Typography className="kickR-letter font">B</Typography>
-        <Typography className="snare-letter font">G</Typography>
-        <Typography className="tomM-letter font">F</Typography>
-        <Typography className="tomR-letter font">D</Typography>
-        <Typography className="tomL-letter font">H</Typography>
-        <Typography className="floor-letter font">M</Typography>
-        <Typography className="open-letter font">Y</Typography>
-        <Typography className="ride-letter font">J</Typography>
-        <Typography className="open-letter font">Y</Typography>
       </div>
->>>>>>> drum
     </div>
   );
 }
