@@ -1,26 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-import DrumPad from "./DrumPad";
-
-function Drum() {
-  const drumPads = [
-    { key: "Q", soundSrc: "path/to/sound1.mp3" },
-    { key: "W", soundSrc: "path/to/sound2.mp3" },
-    // Add more drum pads as needed
-  ];
-  return (
-    <div className="drum-kit">
-      {drumPads.map((drumPad) => {
-        console.log(drumPad);
-        return (
-          <DrumPad
-            key={drumPad.key}
-            keyTrigger={drumPad.key}
-            soundSrc={drumPad.soundSrc}
-          />
-        );
-      })}
-=======
 import React, { useEffect } from "react";
 import kick from "../assets/audio/Kick-Drum.mp3";
 import cymbalCrash from "../assets/audio/China-Cymbal-Crash-Level-6A.mp3";
@@ -87,7 +64,6 @@ function Drum() {
       <Typography className="heading" fontFamily={"fantasy"} variant="h5">
         Virtual Drum set
       </Typography>
-
       <div className="drumSet">
         {drumPads.map((drumPad, index) => {
           const { key, soundSrc, name } = drumPad;
@@ -115,7 +91,6 @@ function Drum() {
         <Typography className="ride-letter font">J</Typography>
         <Typography className="open-letter font">Y</Typography>
       </div>
->>>>>>> drum
     </div>
   );
 }
