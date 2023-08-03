@@ -1,25 +1,42 @@
-* {
-  box-sizing: border-box !important;
-}
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
 .drumKit {
+  box-sizing: border-box;
   background-image: url(../img/27230.jpg);
-  background-size: cover;
-  height: 100vh;
+  background-size: 100% 100%;
+  min-height: 650px;
+  max-height: 200vh;
+  min-width: 1200px;
+}
+.heading {
+  color: whitesmoke;
+  position: absolute;
+  text-align: left;
+  padding-top: 30px;
+  margin-left: 70px !important;
 }
 .drumSet {
   box-sizing: border-box;
-  height: 600px;
-  width: 1200px;
-  margin: 100px auto;
+  padding-top: 85px;
+  height: 100vh;
+  width: 100%;
+  padding-left: 60px;
+  overflow: hidden;
 }
 .element {
   cursor: pointer;
   border-radius: 100px;
   position: absolute;
 }
+.font {
+  position: absolute;
+  z-index: 99;
+  font-family: "Indie Flower", cursive !important;
+  font-weight: 700 !important;
+  font-size: 48px !important;
+}
 /* Chimbal */
 #close {
-  transform: rotate(-6deg);
   width: 130px;
   height: 130px;
   margin-left: 240px;
@@ -27,13 +44,13 @@
   margin-top: 240px;
 }
 #close div {
+  transform: rotate(-6deg);
   background: url(../img/drum/close.png) no-repeat;
   background-size: 100% 100%;
   height: 100%;
 }
 
 #crashL {
-  transform: rotate(-28deg);
   width: 175px;
   z-index: 7;
   height: 175px;
@@ -42,13 +59,13 @@
 }
 
 #crashL div {
+  transform: rotate(-28deg);
   background: url(../img/drum/crashLeft.png) no-repeat;
   background-size: 100% 100%;
   height: 100%;
   width: 100%;
 }
 #splash {
-  transform: rotate(-2deg);
   width: 150px;
   height: 150px;
   margin-left: 445px;
@@ -57,6 +74,7 @@
 }
 
 #splash div {
+  transform: rotate(-2deg);
   background: url(../img/drum/splash.png) no-repeat;
   background-size: 100% 100%;
   height: 100%;
@@ -64,99 +82,190 @@
 }
 
 #crashR {
-  transform: rotate(12deg);
-  background: url(../img/drum/crashRight.png) no-repeat;
-  background-size: 100% 100%;
   width: 165px;
   height: 165px;
   z-index: 7;
   margin-left: 725px;
   margin-top: 20px;
 }
-#ride {
-  transform: rotate(37deg);
-  background: url(../img/drum/ride.png) no-repeat;
+
+#crashR div {
+  transform: rotate(12deg);
+  background: url(../img/drum/crashRight.png) no-repeat;
   background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+}
+#ride {
   width: 200px;
   height: 200px;
   z-index: 7;
   margin-left: 820px;
   margin-top: 150px;
 }
-#open {
-  transform: rotate(-2deg);
-  background: url(../img/drum/open.png) no-repeat;
+#ride div {
+  transform: rotate(37deg);
+  background: url(../img/drum/ride.png) no-repeat;
   background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+}
+.ride-letter {
+  font-size: 42px !important;
+  transform: translate(905px, 305px);
+  color: whitesmoke;
+}
+#open {
   width: 130px;
   height: 130px;
   z-index: 6;
   margin-left: 655px;
   margin-top: 95px;
 }
-#tomL {
-  background: url(../img/drum/tomL.png) no-repeat;
+#open div {
+  transform: rotate(-2deg);
+  background: url(../img/drum/open.png) no-repeat;
   background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+}
+.open-letter {
+  font-size: 36px !important;
+  transform: translate(710px, 185px);
+  color: whitesmoke;
+}
+
+#tomL {
   width: 150px;
   height: 150px;
   z-index: 5;
   margin-left: 410px;
   margin-top: 185px;
 }
-#tomM {
-  background: url(../img/drum/tomM.png) no-repeat;
+
+#tomL div {
+  background: url(../img/drum/tomL.png) no-repeat;
   background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+}
+.tomL-letter {
+  transform: translate(770px, 240px);
+  color: white;
+}
+#tomM {
   width: 160px;
   height: 160px;
   z-index: 5;
   margin-left: 550px;
   margin-top: 135px;
 }
-
-#tomR {
-  transform: rotate(12deg);
-  background: url(../img/drum/tomR.png) no-repeat;
+#tomM div {
+  background: url(../img/drum/tomM.png) no-repeat;
   background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+}
+.tomM-letter {
+  transform: translate(615px, 180px);
+  color: white;
+}
+#tomR {
   width: 170px;
   height: 170px;
   z-index: 5;
   margin-left: 700px;
   margin-top: 185px;
 }
-#snare {
-  background: url(../img/drum/snare.png) no-repeat;
+#tomR div {
+  transform: rotate(12deg);
+  background: url(../img/drum/tomR.png) no-repeat;
   background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+}
+.tomR-letter {
+  transform: translate(465px, 230px);
+  color: white;
+}
+#snare {
   width: 215px;
   height: 210px;
   z-index: 4;
   margin-left: 520px;
   margin-top: 240px;
 }
+#snare div {
+  background: url(../img/drum/snare.png) no-repeat;
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+}
+.snare-letter {
+  transform: translate(610px, 310px);
+  color: white;
+}
 
 #kickL {
-  background: url(../img/drum/kickl.png) no-repeat;
-  background-size: 100% 100%;
   width: 250px;
   height: 245px;
   z-index: 2;
   margin-left: 360px;
   margin-top: 305px;
 }
-#kickR {
-  background: url(../img/drum/kickr.png) no-repeat;
+#kickL div {
+  background: url(../img/drum/kickl.png) no-repeat;
   background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+}
+.kickL-letter {
+  transform: translate(470px, 400px);
+}
+#kickR {
   width: 250px;
   height: 245px;
   z-index: 2;
   margin-left: 640px;
   margin-top: 305px;
 }
-#floor {
-  transform: rotate(8deg);
-  background: url(../img/drum/floor.png) no-repeat;
+#kickR div {
+  background: url(../img/drum/kickr.png) no-repeat;
   background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+}
+.kickR-letter {
+  transform: translate(745px, 400px);
+}
+#floor {
   width: 175px;
   height: 180px;
   z-index: 2;
   margin-left: 890px;
   margin-top: 345px;
+}
+#floor div {
+  transform: rotate(8deg);
+  background: url(../img/drum/floor.png) no-repeat;
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+}
+.floor-letter {
+  transform: translate(965px, 410px);
+  color: white;
+}
+
+.animation {
+  transform: scale(1.1);
+}
+.cheatSheet {
+  border-radius: 2px;
+  right: 10px;
+  top: 10px;
+  position: absolute;
+  width: 200px;
+  height: 300px;
+  background-color: whitesmoke;
 }
