@@ -11,10 +11,20 @@
 .heading {
   color: whitesmoke;
   position: absolute;
-  text-align: left;
   padding-top: 30px;
   margin-left: 70px !important;
 }
+.toggle {
+  cursor: pointer;
+  position: absolute;
+  transform: translate(1050px, 25px);
+  color: rgb(0, 0, 0);
+  padding: 5px;
+  font-size: 1.5rem !important;
+  border-radius: 4px;
+  background-color: whitesmoke;
+}
+
 .drumSet {
   box-sizing: border-box;
   padding-top: 85px;
@@ -29,6 +39,7 @@
   position: absolute;
 }
 .font {
+  cursor: pointer;
   position: absolute;
   z-index: 99;
   font-family: "Indie Flower", cursive !important;
@@ -49,7 +60,10 @@
   background-size: 100% 100%;
   height: 100%;
 }
-
+.close-letter {
+  font-size: 36px !important;
+  transform: translate(324px, 317px) rotate(-43deg);
+}
 #crashL {
   width: 175px;
   z-index: 7;
@@ -64,6 +78,10 @@
   background-size: 100% 100%;
   height: 100%;
   width: 100%;
+}
+.crashL-letter {
+  font-size: 40px !important;
+  transform: translate(387px, 238px) rotate(-26deg);
 }
 #splash {
   width: 150px;
@@ -80,7 +98,10 @@
   height: 100%;
   width: 100%;
 }
-
+.splash-letter {
+  font-size: 38px !important;
+  transform: translate(516px, 175px) rotate(-4deg);
+}
 #crashR {
   width: 165px;
   height: 165px;
@@ -95,6 +116,11 @@
   background-size: 100% 100%;
   height: 100%;
   width: 100%;
+}
+
+.crashR-letter {
+  font-size: 38px !important;
+  transform: translate(776px, 138px) rotate(26deg);
 }
 #ride {
   width: 200px;
@@ -112,8 +138,7 @@
 }
 .ride-letter {
   font-size: 42px !important;
-  transform: translate(905px, 305px);
-  color: whitesmoke;
+  transform: translate(853px, 278px) rotate(39deg);
 }
 #open {
   width: 130px;
@@ -131,8 +156,7 @@
 }
 .open-letter {
   font-size: 36px !important;
-  transform: translate(710px, 185px);
-  color: whitesmoke;
+  transform: translate(715px, 182px) rotate(4deg);
 }
 
 #tomL {
@@ -150,7 +174,7 @@
   width: 100%;
 }
 .tomL-letter {
-  transform: translate(770px, 240px);
+  transform: translate(765px, 240px);
   color: white;
 }
 #tomM {
@@ -185,7 +209,7 @@
   width: 100%;
 }
 .tomR-letter {
-  transform: translate(465px, 230px);
+  transform: translate(470px, 230px);
   color: white;
 }
 #snare {
@@ -253,7 +277,7 @@
   width: 100%;
 }
 .floor-letter {
-  transform: translate(965px, 410px);
+  transform: translate(959px, 403px) rotate(35deg);
   color: white;
 }
 
